@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- book said 'staticfiles' instead of 'static' -->
+<!-- but this was deprecated in django 2.1 -->
+{% load static %}
 <html>
     <head>
         <title>Rango</title>
@@ -10,7 +13,9 @@
             <strong>{{ boldmessage }}</strong><br/>
         </div>
         <div>
-            <a href="/rango/about/">About</a><br/>
+            <a href="/rango/about/">About</a><br />
+            <img src="{% static 'images/rango.png' %}"
+                alt="Picture of Rango" />
         </div>
     </body>
 </html>
