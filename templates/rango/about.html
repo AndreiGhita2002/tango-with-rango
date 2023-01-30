@@ -10,17 +10,14 @@
 <h1>Rango says...</h1>
 <div>
     here is the about page! <br/>
-    <strong>{{ boldmessage }}</strong><br/>
+    This tutorial has been put together by {{ authorname }}
 </div>
 <div>
-    <a href="/rango/about/">About</a><br/>
+    <a href="/rango/">Home Page</a><br/>
     <img src="{% static 'images/rango.png' %}"
          alt="Picture of Rango"/>
     <img src="{{ MEDIA_URL }}cat.jpg"
          alt="Picture of a Cat">
-</div>
-<div>
-    This tutorial has been put together by {{ authorname }}
 </div>
 </body>
 </html>
