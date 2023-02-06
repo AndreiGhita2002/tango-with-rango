@@ -4,7 +4,9 @@
 <!-- but this was deprecated in django 2.1 -->
 {% load static %}
 
-{# no title block needed (?) #}
+{% block title_block %}
+    Homepage
+{% endblock %}
 
 {% block body_block %}
     <h1>Rango says...</h1>
