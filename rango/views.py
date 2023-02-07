@@ -24,6 +24,9 @@ def index(request):
                     'categories': category_list,
                     'pages': page_list}
 
+    # Chapter 10 cookie
+    request.session.set_test_cookie()
+
     # Render the response and send it back!
     return render(request, 'rango/index.html', context=context_dict)
 
@@ -31,6 +34,11 @@ def index(request):
 def about(request):
     context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!',
                     'authorname': 'andrei'}
+
+    if request.session.test_cookie_worked():
+        print("TEST COOKIE WORKED!")
+        request.session.delete_test_cookie()
+
     return render(request, 'rango/about.html', context=context_dict)
 
 
