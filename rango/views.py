@@ -36,6 +36,8 @@ def about(request):
     context_dict = {'boldmessage': 'Crunchy, creamy, cookie, candy, cupcake!',
                     'authorname': 'andrei'}
 
+    visitor_cookie_handler(request)
+
     if request.session.test_cookie_worked():
         print("TEST COOKIE WORKED!")
         request.session.delete_test_cookie()
