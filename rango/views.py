@@ -26,7 +26,6 @@ def index(request):
                     'pages': page_list}
 
     visitor_cookie_handler(request)
-    context_dict['visits'] = request.session['visits']
 
     response = render(request, 'rango/index.html', context=context_dict)
     return response
@@ -37,6 +36,7 @@ def about(request):
                     'authorname': 'andrei'}
 
     visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
 
     if request.session.test_cookie_worked():
         print("TEST COOKIE WORKED!")
